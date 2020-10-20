@@ -1,5 +1,6 @@
 import psutil
 
+
 print(f"::CPU times >> {psutil.cpu_times()}")
 
 for x in range(3):
