@@ -1,5 +1,6 @@
 import psutil
 
+
 print(f"::Disk partitions >> {psutil.disk_partitions()}")
 
 print(f"::Disk usage >> {psutil.disk_usage('/')}")
