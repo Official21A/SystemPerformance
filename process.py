@@ -5,15 +5,15 @@ print(f"::System pids >> {psutil.pids()}")
 
 p = psutil.Process(7055)
 
+
 print("::Process info >> ")
+
 
 print(f" [self]    {p}")
 print(f" [name]    {p.name()}")
 
 print(f" [exe]   {p.exe()}") # '/usr/bin/python'
-
 print(f" [cwd]   {p.cwd()}") # '/home/giampaolo'
-
 print(f" [cwd_line]    {p.cmdline()}") # ['/usr/bin/python', 'main.py']
 
 
@@ -21,31 +21,23 @@ print(f" [pid]   {p.pid}") # 7055
 print(f" [ppid]   {p.ppid()}") # 7054
 
 
->>> p.children(recursive=True)
-[psutil.Process(pid=29835, name='python3', status='sleeping', started='11:45:38'),
- psutil.Process(pid=29836, name='python3', status='waking', started='11:43:39')]
->>>
->>> p.parent()
-psutil.Process(pid=4699, name='bash', status='sleeping', started='09:06:44')
->>> p.parents()
-[psutil.Process(pid=4699, name='bash', started='09:06:44'),
- psutil.Process(pid=4689, name='gnome-terminal-server', status='sleeping', started='0:06:44'),
- psutil.Process(pid=1, name='systemd', status='sleeping', started='05:56:55')]
->>>
->>> p.status()
-'running'
->>> p.username()
-'giampaolo'
->>> p.create_time()
-1267551141.5019531
->>> p.terminal()
-'/dev/pts/0'
->>>
->>> p.uids()
-puids(real=1000, effective=1000, saved=1000)
->>> p.gids()
-pgids(real=1000, effective=1000, saved=1000)
->>>
+print(f" [children]   {p.children(recursive=True)}")
+print(f" [parent]    {p.parent()}")
+print(f" [parents]   {p.parents()}")
+
+
+print(f" [status]    {p.status()}") # 'running'
+print(f" [username]    {p.username()}") # 'giampaolo'
+
+print(f" [create_time]    {p.create_time()}") # 1267551141.5019531
+print(f" [terminal]    {p.terminal()}") # '/dev/pts/0'
+
+print(f" [uids]    {p.uids()}")
+print(f" [gids]    {p.gids()}")
+
+
+
+
 >>> p.cpu_times()
 pcputimes(user=1.02, system=0.31, children_user=0.32, children_system=0.1, iowait=0.0)
 >>> p.cpu_percent(interval=1.0)
