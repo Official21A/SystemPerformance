@@ -71,30 +71,23 @@ print(f" [ionice]   {p.ionice(psutil.IOPRIO_CLASS_IDLE)}") # IO priority
 print(f" [rlimit]   {p.rlimit(psutil.RLIMIT_NOFILE, (5, 5))}") # set resource 
 															   # limits (Linux only)
 
->>>
->>> p.environ()
-{'LC_PAPER': 'it_IT.UTF-8', 'SHELL': '/bin/bash', 'GREP_OPTIONS': '--color=auto',
-'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg',
- ...}
->>>
->>> p.as_dict()
-{'status': 'running', 'num_ctx_switches': pctxsw(voluntary=63, involuntary=1), 'pid': 5457, ...}
->>> p.is_running()
-True
->>> p.suspend()
->>> p.resume()
->>>
->>> p.terminate()
->>> p.kill()
->>> p.wait(timeout=3)
-<Exitcode.EX_OK: 0>
->>>
->>> psutil.test()
-USER         PID %CPU %MEM     VSZ     RSS TTY        START    TIME  COMMAND
-root           1  0.0  0.0   24584    2240            Jun17   00:00  init
-root           2  0.0  0.0       0       0            Jun17   00:00  kthreadd
-...
-giampaolo  31475  0.0  0.0   20760    3024 /dev/pts/0 Jun19   00:00  python2.4
-giampaolo  31721  0.0  2.2  773060  181896            00:04   10:30  chrome
-root       31763  0.0  0.0       0       0            00:05   00:00  kworker/0:1
->>>
+
+print(f" [environment]    {p.environ()}")
+
+print(f" [as_dict]    {p.as_dict()}")
+
+"""
+	p.is_running()
+
+	p.suspend()
+	p.resume()
+
+	p.terminate()
+	p.kill()
+	p.wait(timeout=3)
+	<Exitcode.EX_OK: 0>
+"""
+
+print(p.wait(timeout=3))
+print("\n::>>")
+print(psutil.test())
