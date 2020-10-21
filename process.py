@@ -1,9 +1,7 @@
 import psutil
 
 
-print(f"::System pids >> {psutil.pids()}")
-
-p = psutil.Process(7055)
+p = psutil.Process()
 
 
 print("::Process info >> ")
@@ -23,7 +21,6 @@ print(f" [ppid]   {p.ppid()}") # 7054
 
 print(f" [children]   {p.children(recursive=True)}")
 print(f" [parent]    {p.parent()}")
-print(f" [parents]   {p.parents()}")
 
 
 print(f" [status]    {p.status()}") # 'running'
@@ -88,6 +85,5 @@ print(f" [as_dict]    {p.as_dict()}")
 	<Exitcode.EX_OK: 0>
 """
 
-print(p.wait(timeout=3))
 print("\n::>>")
 print(psutil.test())
