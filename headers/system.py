@@ -1,4 +1,4 @@
-DIR_PATH = "../hardware/"
+DIR_PATH = "/hardware/"
 
 
 def cpu_check():

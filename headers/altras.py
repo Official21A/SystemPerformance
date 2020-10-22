@@ -1,4 +1,4 @@
-DIR_PATH = "../inners/"
+DIR_PATH = "./inners/"
 
 
 def network_check():

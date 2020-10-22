@@ -1,4 +1,4 @@
-DIR_PATH = "../process/"
+DIR_PATH = "./process/"
 
 
 def process_check():
