@@ -13,7 +13,7 @@ def sensors_check():
 	exec(open(f'{DIR_PATH}sensors.py').read())
 
 
-def hardware_full_check():
-	cpu_check()
-	disks_check()
-	memeory_check()	
+def alters_full_check():
+	network_check()
+	other_check()
+	sensors_check()	
